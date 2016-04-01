@@ -8,6 +8,7 @@ namespace XamarinTestApp
 	{
 		public App ()
 		{
+			int count = 0;
 			Button btn = new Button ();
 			btn.Text = "This is a button";
 
@@ -25,7 +26,8 @@ namespace XamarinTestApp
 				}
 			};
 			btn.Clicked += (sender, e) => {
-				btn.Text = "Clicked";
+				count++;
+				btn.Text = "You have clicked " + count.ToString()+" times";
 			};
 		}
 
