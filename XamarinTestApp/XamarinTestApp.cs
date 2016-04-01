@@ -8,6 +8,9 @@ namespace XamarinTestApp
 	{
 		public App ()
 		{
+			Button btn = new Button ();
+			btn.Text = "This is a button";
+
 			// The root page of your application
 			MainPage = new ContentPage {
 				Content = new StackLayout {
@@ -15,10 +18,14 @@ namespace XamarinTestApp
 					Children = {
 						new Label {
 							XAlign = TextAlignment.Center,
-							Text = "Welcome to Xamarin Forms!"
-						}
+							Text = "Eamonn Xamarin Learning"
+						},
+						btn
 					}
 				}
+			};
+			btn.Clicked += (sender, e) => {
+				btn.Text = "Clicked";
 			};
 		}
 
