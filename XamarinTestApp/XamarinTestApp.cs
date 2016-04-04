@@ -9,25 +9,39 @@ namespace XamarinTestApp
 		public App ()
 		{
 			int count = 0;
+
 			Button btn = new Button ();
 			btn.Text = "This is a button";
+
+			Label label = new Label ();
+			label.HorizontalTextAlignment = TextAlignment.Center;
 
 			// The root page of your application
 			MainPage = new ContentPage {
 				Content = new StackLayout {
-					VerticalOptions = LayoutOptions.Center,
+					VerticalOptions = LayoutOptions.StartAndExpand,
 					Children = {
 						new Label {
-							XAlign = TextAlignment.Center,
+							HorizontalTextAlignment = TextAlignment.Center,
 							Text = "Eamonn Xamarin Learning"
 						},
-						btn
+						btn,
+						label
 					}
 				}
 			};
 			btn.Clicked += (sender, e) => {
 				count++;
 				btn.Text = "You have clicked " + count.ToString()+" times";
+				if (count == 5){
+					label.Text += "Wow!";
+				}
+				if (count == 10){
+					label.Text += " Keep it up!";
+				}
+				if (count == 15){
+					label.Text += " You are doing great!";
+				}
 			};
 		}
 
